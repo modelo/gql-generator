@@ -107,6 +107,8 @@ const generateQuery = (
         crossReferenceKeyList, curDepth + 1).queryStr)
       .filter(cur => cur)
       .join('\n');
+    // Allow the same references in siblings 
+    crossReferenceKeyList.pop();
   }
 
   if (!(curType.getFields && !childQuery)) {
